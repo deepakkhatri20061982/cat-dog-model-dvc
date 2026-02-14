@@ -1,0 +1,12 @@
+preprocess:
+  input_dir: data/petImages
+  output_dir: data/processed
+  image_size: 224
+  max_images: 2000
+
+train:
+  batch_size: 32
+  epochs: 5
+  learning_rate: 0.001
+  image_size: 224
+  validation_split: 0.2

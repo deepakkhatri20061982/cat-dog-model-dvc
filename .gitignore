@@ -1,0 +1,5 @@
+/data/*
+/experiments/*
+*.log
+/models/*
+/outputs/*
