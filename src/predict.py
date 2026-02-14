@@ -75,7 +75,7 @@ sample_images = random.sample(image_paths, NUM_SAMPLES)
 # MLflow Setup
 # =====================================================
 if USE_MLFLOW:
-    mlflow.start_run()
+    mlflow.start_run(run_name="predict")
 
     mlflow.log_param("num_samples", NUM_SAMPLES)
     mlflow.log_param("image_size", IMAGE_SIZE)

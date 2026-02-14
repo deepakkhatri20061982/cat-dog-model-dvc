@@ -1,0 +1,33 @@
+stages:
+  create_experiment:
+    cmd: python src/create_experiment.py
+    deps:
+      - src/create_experiment.py
+    outs:
+      - experiments/experiment.yaml
+  preprocess:
+    cmd: python src/preprocess.py
+    deps:
+      - src/preprocess.py
+      - data/petImages
+      - params.yaml
+    params:
+      - preprocess
+    outs:
+      - data/processed
+  train:
+    cmd: python src/train.py
+    deps:
+      - src/train.py
+      - data/processed
+      - params.yaml
+    params:
+      - train
+    outs:
+      - models/model.h5
+  predict:
+    cmd: python src/predict.py
+    deps:
+      - src/predict.py
+      - models/model.h5
+      - params.yaml

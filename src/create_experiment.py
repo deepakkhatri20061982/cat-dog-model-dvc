@@ -4,7 +4,7 @@ import os
 
 os.makedirs("experiments", exist_ok=True)
 
-experiment_name = f"MNIST_DVC_LogisticRegressionV2_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
+experiment_name = f"CatDoc_DVC_Classification_{datetime.now().strftime('%Y%m%d_%H%M%S')}"
 
 data = {
     "experiment_name": experiment_name
