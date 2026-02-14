@@ -1,0 +1,11 @@
+scikit-learn
+numpy
+mlflow
+dvc
+pandas
+matplotlib
+seaborn
+ucimlrepo
+joblib
+pytest
+pytest-cov
