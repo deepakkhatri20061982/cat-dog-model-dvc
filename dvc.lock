@@ -10,20 +10,20 @@ stages:
     outs:
     - path: experiments/experiment.yaml
       hash: md5
-      md5: 28795ce4b7a17b100518c4629dc4859b
+      md5: 4a0b582ac59df375bffc5f3483205727
       size: 60
   preprocess:
     cmd: python src/preprocess.py
     deps:
     - path: data/petImages
       hash: md5
-      md5: 3a5cf86541f22c236620ce5b952ad684.dir
-      size: 848866410
-      nfiles: 24998
+      md5: 6f3f81c7dd9712f1b35cb7521a42f1f8.dir
+      size: 138665080
+      nfiles: 4000
     - path: params.yaml
       hash: md5
-      md5: 23d2c29b9877ee5939628a53ca7fe436
-      size: 220
+      md5: 02c2557d74d57b1c202e22c1e6d3dc36
+      size: 221
     - path: src/preprocess.py
       hash: md5
       md5: c77568e16ff6db45a1896c6c7afc8cd0
@@ -38,21 +38,21 @@ stages:
     outs:
     - path: data/processed
       hash: md5
-      md5: 253aa1eeaa2c622393bcf6f44c736b53.dir
-      size: 37714212
+      md5: 8a0113019100f07de29dee398812aa4e.dir
+      size: 37676767
       nfiles: 4000
   train:
     cmd: python src/train.py
     deps:
     - path: data/processed
       hash: md5
-      md5: 253aa1eeaa2c622393bcf6f44c736b53.dir
-      size: 37714212
+      md5: 8a0113019100f07de29dee398812aa4e.dir
+      size: 37676767
       nfiles: 4000
     - path: params.yaml
       hash: md5
-      md5: 23d2c29b9877ee5939628a53ca7fe436
-      size: 220
+      md5: 02c2557d74d57b1c202e22c1e6d3dc36
+      size: 221
     - path: src/train.py
       hash: md5
       md5: e5b9dfc77ee76edf33b6b50be7f0830d
@@ -60,27 +60,27 @@ stages:
     params:
       params.yaml:
         train:
-          batch_size: 32
-          epochs: 5
-          learning_rate: 0.001
+          batch_size: 64
+          epochs: 10
+          learning_rate: 0.002
           image_size: 224
           validation_split: 0.2
     outs:
     - path: models/model.h5
       hash: md5
-      md5: f8e2ccfcacfa498ae059bc0e1afdd3a1
+      md5: d1d9fe378ac876ec43f739d10c1ef57f
       size: 2397976
   predict:
     cmd: python src/predict.py
     deps:
     - path: models/model.h5
       hash: md5
-      md5: f8e2ccfcacfa498ae059bc0e1afdd3a1
+      md5: d1d9fe378ac876ec43f739d10c1ef57f
       size: 2397976
     - path: params.yaml
       hash: md5
-      md5: 23d2c29b9877ee5939628a53ca7fe436
-      size: 220
+      md5: 02c2557d74d57b1c202e22c1e6d3dc36
+      size: 221
     - path: src/predict.py
       hash: md5
       md5: d9701ab0473829a9244a8b5c6b266c56

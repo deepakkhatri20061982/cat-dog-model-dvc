@@ -5,8 +5,8 @@ preprocess:
   max_images: 2000
 
 train:
-  batch_size: 32
-  epochs: 5
-  learning_rate: 0.001
+  batch_size: 64
+  epochs: 10
+  learning_rate: 0.002
   image_size: 224
   validation_split: 0.2
