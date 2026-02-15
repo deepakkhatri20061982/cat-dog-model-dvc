@@ -7,5 +7,6 @@ matplotlib
 seaborn
 ucimlrepo
 joblib
+tensorflow
 pytest
 pytest-cov
